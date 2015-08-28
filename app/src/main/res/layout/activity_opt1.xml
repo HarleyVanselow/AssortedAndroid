@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.harley.basicmenu.opt1Activity">
+
+    <TextView android:text="@string/opt1" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView2" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/listInfo"
+        android:id="@+id/listInfo"
+        android:layout_alignTop="@+id/linkedListInfo"
+        android:layout_toRightOf="@+id/linkedListInfo"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="makeListConnect" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/linkedListInfo"
+        android:id="@+id/linkedListInfo"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="makeLinkConnect"/>
+
+    <view
+        android:layout_below="@+id/divisor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        class="com.example.harley.basicmenu.CustomDrawableView"
+        android:id="@+id/nodeCanvas"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100"
+        android:id="@+id/divisor"
+        android:layout_below="@+id/listInfo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:minHeight="40dp"
+        android:textSize="40dp"
+        android:textAlignment="gravity"
+        android:gravity="center_vertical|center_horizontal" />
+
+</RelativeLayout>

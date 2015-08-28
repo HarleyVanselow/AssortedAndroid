@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">ICA 9,</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu1">Linked List Line Drawer</string>
+    <string name="menu2">Shape Organizing</string>
+    <string name="menu3">Pressure Based Touch Detection</string>
+
+    <string name="title_activity_opt1">opt1Activity</string>
+    <string name="title_activity_opt2">opt2Activity</string>
+    <string name="title_activity_opt3">opt3Activity</string>
+
+    <string name="opt1">Welcome to Node Connecting</string>
+    <string name="opt2">Welcome to Shape Spawner</string>
+    <string name="opt3">Welcome to The Lights</string>
+
+    <string name="color_prompt">Choose a Color for the Next Page:</string>
+
+    <string name="color0">Orange</string>
+    <string name="color1">Red</string>
+    <string name="color2">Green</string>
+    <string name="color3">Blue</string>
+
+    <string name="roadie">Load Differently</string>
+    <string name="sorted">New Load</string>
+
+    <string name="openMenu">Sort Type</string>
+
+    <string name="sortType1">Height</string>
+    <string name="sortType2">Width</string>
+    <string name="sortType3">Area</string>
+    <string name="sortType4">Roadie</string>
+
+    <string name ="linkedListInfo">Populate Linked List</string>
+    <string name ="listInfo">Make List</string>
+</resources>
