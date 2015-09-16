@@ -6,23 +6,16 @@ import android.graphics.Path;
 import android.graphics.Point;
 import android.graphics.drawable.shapes.OvalShape;
 import android.graphics.drawable.shapes.PathShape;
-import android.os.SystemClock;
-import android.provider.Settings;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.os.Handler;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.example.harley.canvasview.CustomDrawableView;
+
 import java.util.Random;
 import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
 
 
 class Light{

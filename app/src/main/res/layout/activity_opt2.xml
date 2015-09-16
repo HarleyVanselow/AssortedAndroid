@@ -12,7 +12,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/textView3" />
-    <com.example.harley.basicmenu.CustomDrawableView
+    <com.example.harley.canvasview.CustomDrawableView
         android:id="@+id/BoxCanvasView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"

@@ -12,9 +12,9 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/textView4" />
-    <com.example.harley.basicmenu.CustomDrawableView
+    <com.example.harley.canvasview.CustomDrawableView
         android:id="@+id/LightsCanvasView"
         android:layout_height="fill_parent"
         android:layout_width="wrap_content"
-        android:layout_below="@+id/textView4"></com.example.harley.basicmenu.CustomDrawableView>
+        android:layout_below="@+id/textView4"></com.example.harley.canvasview.CustomDrawableView>
 </RelativeLayout>

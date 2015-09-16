@@ -38,7 +38,7 @@
         android:layout_below="@+id/divisor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        class="com.example.harley.basicmenu.CustomDrawableView"
+        class="com.example.harley.canvasview.CustomDrawableView"
         android:id="@+id/nodeCanvas"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"

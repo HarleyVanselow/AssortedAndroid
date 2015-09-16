@@ -1,187 +1,23 @@
 package com.example.harley.basicmenu;
 
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Point;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.ArcShape;
-import android.graphics.drawable.shapes.OvalShape;
-import android.graphics.drawable.shapes.PathShape;
 import android.graphics.drawable.shapes.RectShape;
-import android.graphics.drawable.shapes.Shape;
 import android.os.Bundle;
-import android.provider.CalendarContract;
 import android.support.v7.app.ActionBarActivity;
-import android.util.AttributeSet;
-import android.view.DragEvent;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import com.example.harley.canvasview.CustomDrawableView;
+
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
-
-class CustomDrawableView extends View {
-
-    public List<ShapeDrawable> drawset = new ArrayList<ShapeDrawable>();
-    public CustomDrawableView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-    }
-    public CustomDrawableView(Context context) {
-        super(context);
-    }
-
-    public void add_shape(int x,int y,int width,int height, Shape type,int color){
-        ShapeDrawable mDrawable;
-        mDrawable = new ShapeDrawable(type);
-        mDrawable.getPaint().setColor(color);
-        mDrawable.setBounds(x, y, x + width, y + height);
-
-        drawset.add(mDrawable);
-        this.invalidate();
-    }
-
-    public void add_shape(int x,int y,int width,int height, Shape type){
-        ShapeDrawable mDrawable;
-        mDrawable = new ShapeDrawable(type);
-        mDrawable.getPaint().setColor(0xFFFFFFFF);
-        mDrawable.setBounds(x, y, x + width, y + height);
-        drawset.add(mDrawable);
-        this.invalidate();
-    }
-    public void add_line(int x1,int y1,int x2,int y2, int width, int height, int color){
-        Path path = new Path();
-        //---
-        //-12
-        //---
-        if(y1==y2 && x1<x2){
-            path.moveTo(x1,y1);
-            path.lineTo(x2 + width, y2);
-            path.lineTo(x2 + width, y2 + height);
-            path.lineTo(x1, y1 + height);
-            path.lineTo(x1, y1);
-            add_custom_shape(new PathShape(path, this.getWidth(), this.getHeight()),color);
-        }
-        //---
-        //21-
-        //---
-        if(y1==y2 && x1>x2){
-            path.moveTo(x1+width,y1);
-            path.lineTo(x1 + width, y1+height);
-            path.lineTo(x2, y2 + height);
-            path.lineTo(x2, y2);
-            path.lineTo(x1+width, y1);
-            add_custom_shape(new PathShape(path, this.getWidth(), this.getHeight()),color);
-        }
-        //---
-        //-1-
-        //-2-
-        if(x1==x2 && y1<y2){
-            path.moveTo(x1,y1);
-            path.lineTo(x1 + width, y1);
-            path.lineTo(x2+width, y2 + height);
-            path.lineTo(x2, y2+height);
-            path.lineTo(x1, y1);
-            add_custom_shape(new PathShape(path, this.getWidth(), this.getHeight()),color);
-        }
-        //-2-
-        //-1-
-        //---
-        if(x1==x2 && y2<y1){
-            path.moveTo(x1,y1+height);
-            path.lineTo(x2, y2);
-            path.lineTo(x2+width, y2);
-            path.lineTo(x1+width, y1+height);
-            path.lineTo(x1, y1+height);
-            add_custom_shape(new PathShape(path, this.getWidth(), this.getHeight()),color);
-        }
-        //2--
-        //-1-
-        //---
-        if(x2<x1 && y2<y1){
-            path.moveTo(x1,y1+height);
-            path.lineTo(x2, y2 + height);
-            path.lineTo(x2, y2);
-            path.lineTo(x2+width, y2);
-            path.lineTo(x1+width, y1);
-            path.lineTo(x1+width, y1+height);
-            path.lineTo(x1, y1+height);
-            add_custom_shape(new PathShape(path, this.getWidth(), this.getHeight()),color);
-        }
-        //---
-        //-1-
-        //2--
-        if(x2<x1 && y1<y2){
-            path.moveTo(x1,y1);
-            path.lineTo(x2, y2);
-            path.lineTo(x2, y2 + height);
-            path.lineTo(x2+width, y2+height);
-            path.lineTo(x1+width, y1+height);
-            path.lineTo(x1+width, y1);
-            path.lineTo(x1, y1);
-            add_custom_shape(new PathShape(path, this.getWidth(), this.getHeight()),color);
-        }
-        //---
-        //-1-
-        //--2
-        if(x2>x1 && y1<y2){
-            path.moveTo(x1,y1);
-            path.lineTo(x1+width, y1);
-            path.lineTo(x2 + width, y2);
-            path.lineTo(x2+width, y2+height);
-            path.lineTo(x2, y2+height);
-            path.lineTo(x1, y1+height);
-            path.lineTo(x1, y1);
-            add_custom_shape(new PathShape(path, this.getWidth(), this.getHeight()),color);
-        }
-        //--2
-        //-1-
-        //---
-        if(x2>x1 && y1>y2){
-            path.moveTo(x1,y1);
-            path.lineTo(x2, y2);
-            path.lineTo(x2+width, y2);
-            path.lineTo(x2+width, y2+height);
-            path.lineTo(x1+width, y1+height);
-            path.lineTo(x1, y1+height);
-            path.lineTo(x1, y1);
-            add_custom_shape(new PathShape(path, this.getWidth(), this.getHeight()),color);
-        }
-
-    }
-    public void add_custom_shape(Shape type,int color){
-        ShapeDrawable mDrawable;
-        mDrawable = new ShapeDrawable(type);
-        mDrawable.getPaint().setColor(color);
-        mDrawable.setBounds(0, 0, this.getWidth(), this.getHeight());
-        Paint mPaint=new Paint();
-        mPaint.setStyle(Paint.Style.FILL);
-        mPaint.setColor(color);
-        mDrawable.getPaint().set(mPaint);
-        drawset.add(mDrawable);
-        this.invalidate();
-    }
-    protected void onDraw(Canvas canvas) {
-        for(int i=0;i<drawset.size();i++){
-            drawset.get(i).draw(canvas);
-        }
-    }
-}
 
 class Package{
     public static Comparator<Package> AreaComparator = new Comparator<Package>() {

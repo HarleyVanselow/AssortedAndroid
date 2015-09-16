@@ -1,36 +1,17 @@
 package com.example.harley.basicmenu;
 
-import android.content.Context;
 import android.content.Intent;
-import android.gesture.GestureOverlayView;
 import android.graphics.Color;
-import android.graphics.Path;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.PathShape;
-import android.graphics.drawable.shapes.RectShape;
-import android.media.Image;
-import android.support.v4.view.GestureDetectorCompat;
-import android.support.v4.view.MotionEventCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.GestureDetector;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import com.example.harley.canvasview.CustomDrawableView;
 
-import java.io.Console;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 
